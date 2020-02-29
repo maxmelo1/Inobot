@@ -1,0 +1,7 @@
+# Arduino IDE Keywords for Syntax Coloring
+ 
+# Keyword for class LDR
+LDR KEYWORD1
+ 
+# Keyword for class functions
+read   KEYWORD2
