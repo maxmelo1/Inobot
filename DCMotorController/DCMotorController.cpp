@@ -14,6 +14,37 @@ ml0(l0), ml1(l1), mr0(r0), mr1(r1), mspl(spl), mspr(spr)
 }
 
 /********************************************************************************
+*	Aciona os motores com a potência por parâmetro. O sinal da potência determina	*
+* o sentido do movimento se dá pelo sinal.                                      *
+*	@param powerLeft 0-255														                            *
+*	@param powerRight 0-255														                            *
+********************************************************************************/
+void DCMotorController::steer(uint8_t powerLeft, uint8_t powerRight){
+  
+  if( powerLeft >= 0 ){
+    digitalWrite(ml0, HIGH);
+    digitalWrite(ml1, LOW);
+  }
+  else{
+    digitalWrite(ml0, LOW);
+    digitalWrite(ml1, HIGH);
+  }
+  
+  if( powerRight > = 0 ){
+    digitalWrite(mr0, HIGH);
+    digitalWrite(mr1, LOW);
+  }
+  else{
+    digitalWrite(mr0, LOW);
+    digitalWrite(mr1, HIGH);
+  }
+  
+
+  analogWrite(mspl, abs(powerLeft));
+  analogWrite(mspr, abs(powerRight));
+}
+
+/********************************************************************************
 *	Aciona os motores para a frente com a potência por parâmetro				*
 *	@param powerLeft 0-255														*
 *	@param powerRight 0-255														*

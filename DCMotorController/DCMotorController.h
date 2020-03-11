@@ -3,6 +3,8 @@
  
 #include <Arduino.h>
 
+#include <stdlib.h> 
+
 
 class DCMotorController{
 	public:
